@@ -1,0 +1,75 @@
+# Security Headers - Yamene Meat Products
+# Place this file in the root of your web server
+
+# Force HTTPS redirect
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # Redirect HTTP to HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# Enable HTTP Strict Transport Security (HSTS)
+# Forces HTTPS for 1 year, including subdomains
+<IfModule mod_headers.c>
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    
+    # X-Frame-Options: Prevent clickjacking
+    Header always set X-Frame-Options "DENY"
+    
+    # X-Content-Type-Options: Prevent MIME type sniffing
+    Header always set X-Content-Type-Options "nosniff"
+    
+    # Referrer-Policy: Limit referrer information
+    Header always set Referrer-Policy "no-referrer"
+    
+    # Content Security Policy (with unsafe-inline for styling)
+    Header always set Content-Security-Policy "default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'none'"
+    
+    # Permissions-Policy: Restrict dangerous APIs
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()"
+</IfModule>
+
+# Enable GZIP compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript
+</IfModule>
+
+# Cache static assets
+<FilesMatch "\.(jpg|jpeg|png|gif|ico|css|js|svg|woff|woff2|ttf|eot)$">
+    <IfModule mod_expires.c>
+        ExpiresActive On
+        ExpiresDefault "access plus 30 days"
+    </IfModule>
+    <IfModule mod_headers.c>
+        Header set Cache-Control "public, max-age=2592000, immutable"
+    </IfModule>
+</FilesMatch>
+
+# Disable directory listing
+Options -Indexes
+
+# Block access to sensitive files
+<FilesMatch "^(\.htaccess|\.env|\.git|config\.php|wp-config\.php|README\.md)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Set proper MIME types
+<IfModule mod_mime.c>
+    AddType application/javascript js
+    AddType application/json json
+    AddType text/css css
+    AddEncoding gzip .gz
+</IfModule>
+
+# Disable PHP execution in image directories (if applicable)
+<Directory "pictures">
+    <IfModule mod_php.c>
+        php_flag engine off
+    </IfModule>
+    <FilesMatch "\.php$">
+        Order allow,deny
+        Deny from all
+    </FilesMatch>
+</Directory>

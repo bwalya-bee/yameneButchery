@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self'; font-src 'self' https://fonts.gstatic.com; img-src 'self'; connect-src 'none'; frame-ancestors 'none';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Referrer-Policy" content="no-referrer">
+    <title>Yamene Meat Products</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <h1 class="yame">YAMENE MEAT PRODUCTS</h1>
+            <img src="pictures/main-logo-100kb.jpg" alt="YAME MEAT PRODUCTS" class="main-logo-img">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#products">Products</a></li>
+            <li><a href="#feedback">Customer Feedback</a></li>
+            <li><a href="#footer-info">About & Contact</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>It's the one</h1>
+            <p>Premium quality meat you can trust</p>
+            <a href="#products" class="cta-button">View Our Range</a>
+        </div>
+    </header>
+
+    <section id="products" class="section">
+        <h2 class="section-title">Our Premium Quality Cuts</h2>
+        
+        <div class="filter-buttons" id="filter-buttons-container">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="beef">Beef</button>
+            <button class="filter-btn" data-filter="polony">Polony</button>
+            <button class="filter-btn" data-filter="chicken">Chicken</button>
+            <button class="filter-btn" data-filter="sausage">Sausages</button>
+        </div>
+
+        <div class="product-grid">
+            <!-- BEEF PRODUCTS -->
+            <div class="product-card" data-category="beef">
+                <div class="image-container">
+                    <img src="pictures/steak-on-bone-100kb.jpg" alt="Steak on Bone" loading="lazy">
+                </div>
+                <h3>Steak on Bone</h3>
+                <p>Prime cut, perfect for grilling.</p>
+            </div>
+            <div class="product-card" data-category="beef">
+                <div class="image-container">
+                    <img src="pictures/mince-100kb.jpg" alt="Meat Mince" loading="lazy">
+                </div>
+                <h3>Mince</h3>
+                <p>Lean, freshly ground meat.</p>
+            </div>
+            <div class="product-card" data-category="beef">
+                <div class="image-container">
+                    <img src="pictures/Oxtail-100kb.jpg" alt="Oxtail" loading="lazy">
+                </div>
+                <h3>Oxtail</h3>
+                <p>Tender and flavorful cut.</p>
+            </div>
+            <div class="product-card" data-category="beef">
+                <div class="image-container">
+                    <img src="pictures/beef bone-100kb.jpg" alt="Beef Bones" loading="lazy">
+                </div>
+                <h3>Beef Bones</h3>
+                <p>Meaty bones for rich soups and broths.</p>
+            </div>
+            <div class="product-card" data-category="beef">
+                <div class="image-container">
+                    <img src="pictures/mixed-cut-100kb.jpg" alt="Mixed Cut" loading="lazy">
+                </div>
+                <h3>Mixed Cut</h3>
+                <p>Assorted premium meat cuts.</p>
+            </div>
+            <div class="product-card" data-category="beef">
+                <div class="image-container">
+                    <img src="pictures/T bone stea-100kb.jpg" alt="T Bone Steak" loading="lazy">
+                </div>
+                <h3>T Bone Steak</h3>
+                <p>Premium cut with bone, perfect for grilling.</p>
+            </div>
+            <div class="product-card" data-category="beef">
+                <div class="image-container">
+                    <img src="pictures/beef shoulde-100kb.jpg" alt="Beef Shoulder" loading="lazy">
+                </div>
+                <h3>Beef Shoulder</h3>
+                <p>Tender shoulder cut, ideal for slow cooking.</p>
+            </div>
+
+            <!-- SAUSAGE PRODUCTS -->
+            <div class="product-card" data-category="sausage">
+                <div class="image-container">
+                    <img src="pictures/plain-beef-sausage-100kb.jpg" alt="Meat Sausage" loading="lazy">
+                </div>
+                <h3>Classic Meat Sausage</h3>
+                <p>Pure meat sausage, family favorite.</p>
+            </div>
+            <div class="product-card" data-category="sausage">
+                <div class="image-container">
+                    <img src="pictures/chakalaka-sausage-100kb.jpg" alt="Chakalak Sausage" loading="lazy">
+                </div>
+                <h3>Chakalaka Sausage</h3>
+                <p>Spiced sausage with African flavor.</p>
+            </div>
+            <div class="product-card" data-category="sausage">
+                <div class="image-container">
+                    <img src="pictures/hungarian-100kb.jpg" alt="Hungarian Sausage" loading="lazy">
+                </div>
+                <h3>Hungarian Sausage</h3>
+                <p>flavorful Chiken hungarian.</p>
+            </div>
+
+            <!-- POLONY PRODUCTS -->
+            <div class="product-card" data-category="polony">
+                <div class="image-container">
+                    <img src="pictures/french polony-100kb.jpg" alt="French Polony" loading="lazy">
+                </div>
+                <h3>French Polony</h3>
+                <p>Delicious French-style polony.</p>
+            </div>
+            <div class="product-card" data-category="polony">
+                <div class="image-container">
+                    <img src="pictures/garlic polon-100kb.jpg" alt="Garlic Polony" loading="lazy">
+                </div>
+                <h3>Garlic Polony</h3>
+                <p>Flavorful garlic infused polony.</p>
+            </div>
+
+            <!-- CHICKEN PRODUCTS -->
+            <div class="product-card" data-category="chicken">
+                <div class="image-container">
+                    <img src="pictures/chicken -100kb.jpg" alt="Full Chicken" loading="lazy">
+                </div>
+                <h3>Full Chicken</h3>
+                <p>Whole fresh chicken.</p>
+            </div>
+            <div class="product-card" data-category="chicken">
+                <div class="image-container">
+                    <img src="pictures/chicken-feet-100kb.jpg" alt="Chicken Feet" loading="lazy">
+                </div>
+                <h3>Chicken Feet</h3>
+                <p>Fresh chicken feet.</p>
+            </div>
+            <div class="product-card" data-category="chicken">
+                <div class="image-container">
+                    <img src="pictures/chicken-pieces-100kb.jpg" alt="Chicken Pieces" loading="lazy">
+                </div>
+                <h3>Chicken Pieces</h3>
+                <p>Assorted fresh chicken pieces.</p>
+            </div>
+            <div class="product-card" data-category="chicken">
+                <div class="image-container">
+                    <img src="pictures/smoked chike-100kb.jpg" alt="Smoked Chicken" loading="lazy">
+                </div>
+                <h3>Smoked Chicken</h3>
+                <p>Delicious smoked chicken.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="feedback" class="section feedback-section">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <div class="carousel-container">
+            <div id="testimonial-display" class="testimonial">
+                </div>
+        </div>
+    </section>
+
+    <section id="footer-info" class="footer-main-section">
+        <div class="footer-container">
+            
+            <div class="footer-col footer-about">
+                <img src="pictures/second-logo-100kb.jpg" alt="Yamene Seal" class="footer-seal-logo">
+                <h3>About Yamene</h3>
+                <p>Yamene Meat Products serves Lusaka with pride. We believe in ethical sourcing and providing the freshest cuts to families and businesses alike. "It's the one."</p>
+            </div>
+            
+            <div class="footer-col footer-contact">
+                <h3>Contact Details</h3>
+                <ul class="contact-list">
+                    <li>
+                        <span class="icon">📍</span>
+                        <div>
+                            <strong>Address:</strong><br>
+                            Farm N0. 10367 Palabana Area Lusacka, Zambia
+                        </div>
+                    </li>
+                    <li>
+                        <span class="icon">📞</span>
+                        <div>
+                            <strong>Contact us:</strong><br>
+                            +260 97 3958146<br>
+                            +260 97 7863803<br>
+                            <strong>Email:</strong><br>
+                            info@yamenemeats.co.za<br>
+                            sales@yamenemeats.co.za
+                        </div>
+                    </li>
+                    <li>
+                        <span class="icon">📱</span>
+                        <div>
+                            <strong>Social Media:</strong><br>
+                            <div class="social-icons-footer">
+                                <a href="https://wa.me/260973958146" target="_blank">WhatsApp</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="footer-col footer-map">
+                <h3>Our Locations</h3>
+                <div class="locations-list">
+                    <div class="location-item">📍 Chawama</div>
+                    <div class="location-item">📍 Soweto</div>
+                    <div class="location-item">📍 Lilayi</div>
+                    <div class="location-item">📍 Kalingalinga</div>
+                    <div class="location-item">📍 Bauleni</div>
+                    <div class="location-item">📍 Mtendere</div>
+                    <div class="location-item">📍 Kasumbalesa</div>
+                    <div class="location-item">📍 Chongwe</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Yamene Meat Products (Member of Selhurst Investments Group). All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
